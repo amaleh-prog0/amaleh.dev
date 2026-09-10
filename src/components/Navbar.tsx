@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/Button";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -13,6 +14,18 @@ const navLinks = [
   { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },
 ];
+
+function NavLink({ link }: { link: typeof navLinks[0] }) {
+  return (
+    <Link
+      href={link.href}
+      className="relative text-sm font-medium text-muted hover:text-accent transition-colors group py-1"
+    >
+      {link.name}
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+    </Link>
+  );
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -29,13 +42,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-muted hover:text-accent transition-colors"
-            >
-              {link.name}
-            </Link>
+            <NavLink key={link.name} link={link} />
           ))}
           <ThemeToggle />
         </div>

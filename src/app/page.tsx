@@ -11,12 +11,12 @@ export default function Page() {
   return (
     <main className="flex flex-col">
       <Hero />
-      <Reveal><About /></Reveal>
-      <Reveal><WhatIBuild /></Reveal>
-      <Reveal><Projects /></Reveal>
-      <Reveal><Skills /></Reveal>
-      <Reveal><Experience /></Reveal>
-      <Reveal><Contact /></Reveal>
+      <Reveal direction="up"><About /></Reveal>
+      <Reveal direction="left"><WhatIBuild /></Reveal>
+      <Reveal direction="up"><Projects /></Reveal>
+      <Reveal direction="right"><Skills /></Reveal>
+      <Reveal direction="up"><Experience /></Reveal>
+      <Reveal direction="down"><Contact /></Reveal>
     </main>
   );
 }

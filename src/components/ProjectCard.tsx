@@ -15,18 +15,21 @@ interface ProjectCardProps {
 export function ProjectCard({ project, className }: ProjectCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -8, scale: 1.02 }}
       className={cn(
-        "group relative flex flex-col rounded-xl border border-border bg-surface overflow-hidden transition-all hover:border-accent",
+        "group relative flex flex-col rounded-xl border border-border bg-surface overflow-hidden transition-all hover:border-accent hover:shadow-[0_0_20px_rgba(0,255,255,0.15)]",
         className
       )}
     >
       <div className="aspect-video w-full bg-background relative overflow-hidden">
-        {/* Project visual placeholder */}
-        <div className="absolute inset-0 flex items-center justify-center text-muted opacity-20 group-hover:opacity-40 transition-opacity">
-          <span className="text-4xl font-mono">{project.title[0]}</span>
+        {/* Animated Project visual placeholder */}
+        <div className="absolute inset-0 flex items-center justify-center text-muted opacity-20 group-hover:opacity-40 transition-all duration-500 group-hover:scale-110">
+          <span className="text-6xl font-mono font-bold bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">
+            {project.title[0]}
+          </span>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-accent/5 pointer-events-none" />
       </div>
 
       <div className="p-6 flex flex-col flex-grow">
