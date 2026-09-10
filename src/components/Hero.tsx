@@ -51,7 +51,6 @@ export function Hero() {
           />
         </div>
       </div>
-      </div>
 
       <Container>
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
