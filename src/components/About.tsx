@@ -19,7 +19,6 @@ export function About() {
               ))}
             </div>
           </div>
-          </div>
 
           <div className="grid gap-6">
             <div className="p-6 rounded-xl border border-border bg-surface">
