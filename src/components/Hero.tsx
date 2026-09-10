@@ -85,7 +85,7 @@ export function Hero() {
                 </motion.span>
               </AnimatePresence>
               {/* Invisible placeholder to maintain layout width based on longest word */}
-              <span className="invisible">
+              <span className="opacity-0 pointer-events-none select-none">
                 {SPECIALIZATIONS.reduce((a, b) => a.length > b.length ? a : b)}
               </span>
             </span>{" "}
