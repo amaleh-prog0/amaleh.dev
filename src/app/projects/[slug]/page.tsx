@@ -14,7 +14,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   const { caseStudy } = project;
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="relative pt-32 pb-20 overflow-hidden">
+      <div className="absolute inset-0 -z-10 opacity-30 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
+      </div>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,10 +26,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           className="max-w-3xl mx-auto"
         >
           <div className="mb-12">
-            <Button variant="ghost" size="sm" href="/" className="mb-6">
-              ← Back to Portfolio
+            <Button variant="ghost" size="sm" href="/" className="mb-6 group">
+              <span className="group-hover:-translate-x-1 transition-transform inline-block mr-1">←</span> Back to Portfolio
             </Button>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">
               {project.title}
             </h1>
             <p className="text-xl text-muted mb-8">
@@ -33,11 +37,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </p>
             <div className="flex flex-wrap gap-2">
               {project.tech.map(t => (
-                <span key={t} className="px-3 py-1 rounded-full border border-border bg-surface text-xs font-medium text-muted">
+                <span key={t} className="px-3 py-1 rounded-full border border-border bg-surface text-xs font-medium text-muted hover:border-accent transition-colors">
                   {t}
                 </span>
               ))}
             </div>
+          </div>
           </div>
 
           <div className="space-y-16">
@@ -51,9 +56,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <CaseStudySection title="Lessons Learned" content={caseStudy.lessons} />
           </div>
 
-          <div className="mt-20 p-8 rounded-2xl border border-border bg-surface text-center">
-            <h3 className="text-2xl font-bold mb-6">Explore the Source</h3>
-            <div className="flex justify-center gap-4">
+          <div className="mt-20 p-8 rounded-2xl border border-border bg-surface text-center relative overflow-hidden group">
+            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <h3 className="text-2xl font-bold mb-6 relative z-10">Explore the Source</h3>
+            <div className="flex justify-center gap-4 relative z-10">
               <Button size="lg" href={project.github} target="_blank">
                 Visit GitHub Repository
               </Button>
@@ -72,8 +78,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
 function CaseStudySection({ title, content }: { title: string; content: string }) {
   return (
-    <div className="space-y-4">
-      <h2 className="text-2xl font-bold tracking-tight text-accent">{title}</h2>
+    <div className="space-y-4 group">
+      <div className="flex items-center gap-4">
+        <h2 className="text-2xl font-bold tracking-tight text-accent">{title}</h2>
+        <div className="h-px flex-grow bg-border group-hover:bg-accent transition-colors duration-500" />
+      </div>
       <p className="text-lg text-muted leading-relaxed">
         {content}
       </p>
