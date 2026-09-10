@@ -46,9 +46,8 @@ export function Hero() {
             className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[120px] animate-pulse"
           />
           <motion.div
-            style={{ x: springX, y: springY }}
+            style={{ x: springX, y: springY, animationDelay: "2s" }}
             className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[120px] animate-pulse"
-            style={{ animationDelay: "2s", x: springX, y: springY }}
           />
         </div>
       </div>
