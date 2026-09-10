@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { motion } from "framer-motion";
+import { PageTransition } from "@/components/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,12 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-full flex flex-col">
         <SmoothScroll>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col min-h-full"
-          >
+          <PageTransition>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -65,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </main>
               <Footer />
             </ThemeProvider>
-          </motion.div>
+          </PageTransition>
         </SmoothScroll>
       </body>
     </html>
