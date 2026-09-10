@@ -4,7 +4,7 @@ import { experience } from "@/data/experience";
 
 export function Experience() {
   return (
-    <section id="experience" className="relative py-20 border-t border-border overflow-hidden">
+    <section id="experience" className="relative py-24 md:py-32 border-t border-border overflow-hidden">
       <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
         <div className="absolute bottom-0 right-[-10%] w-[30%] h-[30%] bg-accent rounded-full blur-[100px]" />
       </div>

@@ -5,7 +5,7 @@ import { social } from "@/data/social";
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-20 border-t border-border overflow-hidden">
+    <section id="contact" className="relative py-24 md:py-32 border-t border-border overflow-hidden">
       <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-20 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[120px] animate-pulse" />

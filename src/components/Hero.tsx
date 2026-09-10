@@ -37,7 +37,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         {/* Subtle technical background element */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-20 pointer-events-none">
@@ -50,6 +50,7 @@ export function Hero() {
             className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent rounded-full blur-[120px] animate-pulse"
           />
         </div>
+      </div>
       </div>
 
       <Container>
@@ -68,7 +69,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
             I engineer{" "}
             <span className="relative inline-block text-accent">

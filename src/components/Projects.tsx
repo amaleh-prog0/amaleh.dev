@@ -7,7 +7,7 @@ export function Projects() {
   const featuredProjects = projects.filter(p => p.featured);
 
   return (
-    <section id="projects" className="relative py-20 border-t border-border overflow-hidden">
+    <section id="projects" className="relative py-24 md:py-32 border-t border-border overflow-hidden">
       <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-accent rounded-full blur-[120px]" />
       </div>

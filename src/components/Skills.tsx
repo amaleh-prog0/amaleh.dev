@@ -4,7 +4,7 @@ import { skills } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section id="skills" className="relative py-20 border-t border-border overflow-hidden">
+    <section id="skills" className="relative py-24 md:py-32 border-t border-border overflow-hidden">
       <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
         <div className="absolute top-0 left-[-10%] w-[30%] h-[30%] bg-accent rounded-full blur-[100px]" />
       </div>
