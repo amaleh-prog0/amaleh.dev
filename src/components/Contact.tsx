@@ -14,7 +14,7 @@ export function Contact() {
       </div>
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-6 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">Let's Build Something</h2>
+          <h2 className="text-[clamp(1.5rem,4vw,1.875rem)] font-bold tracking-tight mb-6 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">Let's Build Something</h2>
           <p className="text-lg text-muted mb-10">
             Whether you have a project in mind, a technical challenge to solve, or just want to talk about AI systems—I'm always open to interesting conversations.
           </p>

@@ -10,7 +10,7 @@ export function Experience() {
       </div>
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">Experience</h2>
+          <h2 className="text-[clamp(1.5rem,4vw,1.875rem)] font-bold tracking-tight mb-4 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">Experience</h2>
           <p className="text-muted max-w-2xl mx-auto">
             Professional history and technical contributions.
           </p>

@@ -12,7 +12,7 @@ export function About() {
       <Container>
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">About Me</h2>
+            <h2 className="text-[clamp(1.5rem,4vw,1.875rem)] font-bold tracking-tight bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">About Me</h2>
             <div className="space-y-4 text-muted leading-relaxed text-lg">
               {profile.about.split("\n\n").map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>

@@ -69,7 +69,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6"
+            className="text-[clamp(2.25rem,8vw,4.5rem)] font-bold tracking-tight mb-6 leading-[1.1]"
           >
             I engineer{" "}
             <span className="relative inline-block text-accent">
@@ -97,7 +97,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted max-w-2xl mb-10"
+            className="text-[clamp(1rem,2vw+0.5rem,1.25rem)] text-muted max-w-2xl mb-10"
           >
             {profile.specialization} I combine solid software engineering with emerging AI technologies to build systems that are robust, efficient, and solve meaningful real-world problems.
           </motion.p>
