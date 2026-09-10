@@ -43,7 +43,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               ))}
             </div>
           </div>
-          </div>
 
           <div className="space-y-16">
             <CaseStudySection title="Overview" content={caseStudy.overview} />
