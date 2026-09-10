@@ -28,10 +28,13 @@ const categories = [
 
 export function WhatIBuild() {
   return (
-    <section id="what-i-build" className="py-20 border-t border-border">
+    <section id="what-i-build" className="relative py-20 border-t border-border overflow-hidden">
+      <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
+        <div className="absolute bottom-0 left-[-10%] w-[30%] h-[30%] bg-accent rounded-full blur-[100px]" />
+      </div>
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">What I Build</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">What I Build</h2>
           <p className="text-muted max-w-2xl mx-auto">
             I focus on the intersection of robust software engineering and intelligent automation.
           </p>

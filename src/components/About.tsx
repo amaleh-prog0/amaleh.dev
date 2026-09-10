@@ -5,16 +5,20 @@ import { profile } from "@/data/profile";
 
 export function About() {
   return (
-    <section id="about" className="py-20 border-t border-border">
+    <section id="about" className="relative py-20 border-t border-border overflow-hidden">
+      <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
+        <div className="absolute top-0 right-[-10%] w-[30%] h-[30%] bg-accent rounded-full blur-[100px]" />
+      </div>
       <Container>
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
+            <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">About Me</h2>
             <div className="space-y-4 text-muted leading-relaxed text-lg">
               {profile.about.split("\n\n").map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
             </div>
+          </div>
           </div>
 
           <div className="grid gap-6">

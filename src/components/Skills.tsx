@@ -4,10 +4,13 @@ import { skills } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 border-t border-border">
+    <section id="skills" className="relative py-20 border-t border-border overflow-hidden">
+      <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none">
+        <div className="absolute top-0 left-[-10%] w-[30%] h-[30%] bg-accent rounded-full blur-[100px]" />
+      </div>
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Technical Stack</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4 bg-gradient-to-br from-foreground to-muted bg-clip-text text-transparent">Technical Stack</h2>
           <p className="text-muted max-w-2xl mx-auto">
             A curated set of technologies I use to architect and build professional software.
           </p>
