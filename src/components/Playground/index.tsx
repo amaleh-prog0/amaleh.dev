@@ -89,23 +89,19 @@ export function usePlayground() {
 }
 
 export function Playground() {
-  return (
-    <PlaygroundProvider>
-      <PlaygroundClient />
-    </PlaygroundProvider>
-  );
-}
+  const [isMounted, setIsMounted] = useState(false);
 
-function PlaygroundClient() {
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
+  useEffect(() => {
+    setIsMounted(true);
   }, []);
 
-  if (!mounted) {
+  if (!isMounted) {
     return null;
   }
 
-  return <PlaygroundLayout />;
+  return (
+    <PlaygroundProvider>
+      <PlaygroundLayout />
+    </PlaygroundProvider>
+  );
 }
