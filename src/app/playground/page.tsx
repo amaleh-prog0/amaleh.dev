@@ -1,8 +1,10 @@
-import { Playground } from "@/components/Playground";
+"use client";
+
+import * as React from "react";
+import dynamic from 'next/dynamic';
 import { Container } from "@/components/ui/Container";
 import { PageWrapper } from "@/components/PageWrapper";
 import { motion } from "framer-motion";
-import dynamic from 'next/dynamic';
 
 const DynamicPlayground = dynamic(() => import("@/components/Playground").then(mod => mod.Playground), {
   ssr: false,
