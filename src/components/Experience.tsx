@@ -43,7 +43,7 @@ export function Experience() {
                 </ul>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {exp.tech.map((t, tIdx) => (
-                    <span key={tIdx} className="text-[10px] px-2 py-0.5 rounded-md bg-surface border border-border text-muted">
+                    <span key={tIdx} className="text-[10px] px-2 py-0.5 rounded-md bg-surface/80 backdrop-blur-sm border border-border text-muted">
                       {t}
                     </span>
                   ))}

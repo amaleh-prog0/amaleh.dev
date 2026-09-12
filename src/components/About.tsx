@@ -21,7 +21,7 @@ export function About() {
           </div>
 
           <div className="grid gap-6">
-            <div className="p-6 rounded-xl border border-border bg-surface">
+            <div className="p-6 rounded-xl border border-border bg-surface/80 backdrop-blur-sm">
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 bg-accent rounded-full" />
                 Engineering Philosophy
@@ -36,7 +36,7 @@ export function About() {
               </ul>
             </div>
 
-            <div className="p-6 rounded-xl border border-border bg-surface flex flex-col justify-center text-center">
+            <div className="p-6 rounded-xl border border-border bg-surface/80 backdrop-blur-sm flex flex-col justify-center text-center">
               <div className="text-4xl font-bold text-accent mb-2">Full Stack</div>
               <div className="text-sm text-muted">Architecture & Implementation</div>
             </div>

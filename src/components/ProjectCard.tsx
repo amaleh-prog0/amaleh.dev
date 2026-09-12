@@ -17,7 +17,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
     <motion.div
       whileHover={{ y: -8, scale: 1.02 }}
       className={cn(
-        "group relative flex flex-col rounded-xl border border-border bg-surface overflow-hidden transition-all hover:border-accent hover:shadow-[0_0_20px_rgba(0,255,255,0.15)]",
+        "group relative flex flex-col rounded-xl border border-border bg-surface overflow-hidden transition-all hover:border-accent hover:shadow-[0_0_30px_rgba(var(--accent-rgb),0.15)]",
         className
       )}
     >
@@ -29,7 +29,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           </span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-accent/5 pointer-events-none" />
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[rgba(var(--accent-rgb),0.05)] pointer-events-none" />
       </div>
 
       <div className="p-6 flex flex-col flex-grow">

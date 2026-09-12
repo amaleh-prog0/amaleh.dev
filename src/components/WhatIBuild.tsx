@@ -44,7 +44,7 @@ export function WhatIBuild() {
           {categories.map((cat, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl border border-border bg-surface hover:border-accent transition-colors group"
+              className="p-6 rounded-xl border border-border bg-surface/80 backdrop-blur-sm hover:border-accent transition-colors group"
             >
               <h3 className="text-lg font-semibold mb-3 group-hover:text-accent transition-colors">
                 {cat.title}
