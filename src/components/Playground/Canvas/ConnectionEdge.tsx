@@ -11,7 +11,7 @@ interface EdgeProps {
 
 export function ConnectionEdge({ from, to, isAccent }: EdgeProps) {
   return (
-    <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible" style={{ zIndex: -1 }}>
+    <>
       <motion.path
         initial={{ pathLength: 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
@@ -40,6 +40,6 @@ export function ConnectionEdge({ from, to, isAccent }: EdgeProps) {
         }}
         style={{ opacity: 0.6 }}
       />
-    </svg>
+    </>
   );
 }
