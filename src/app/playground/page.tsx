@@ -1,10 +1,12 @@
-"use client";
-
-import * as React from "react";
 import { Playground } from "@/components/Playground";
 import { Container } from "@/components/ui/Container";
 import { PageWrapper } from "@/components/PageWrapper";
 import { motion } from "framer-motion";
+import dynamic from 'next/dynamic';
+
+const DynamicPlayground = dynamic(() => import("@/components/Playground").then(mod => mod.Playground), {
+  ssr: false,
+});
 
 export default function PlaygroundPage() {
   return (
@@ -31,7 +33,7 @@ export default function PlaygroundPage() {
             </p>
           </motion.div>
 
-          <Playground />
+          <DynamicPlayground />
         </Container>
       </div>
     </PageWrapper>
