@@ -1,3 +1,5 @@
+"use client";
+
 import { Playground } from "@/components/Playground";
 import { Container } from "@/components/ui/Container";
 import { PageWrapper } from "@/components/PageWrapper";
