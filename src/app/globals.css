@@ -11,7 +11,7 @@
   --text-muted: #6b7280;
 }
 
-.dark {
+html.dark {
   /* Dark Theme - Deep Charcoal Electric */
   --background: #0a0a0a;
   --foreground: #ededed;

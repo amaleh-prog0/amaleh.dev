@@ -46,22 +46,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SmoothScroll>
-          <PageTransition>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SmoothScroll>
+            <PageTransition>
               <Navbar />
               <main className="flex-grow">
                 {children}
               </main>
               <Footer />
-            </ThemeProvider>
-          </PageTransition>
-        </SmoothScroll>
+            </PageTransition>
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );
