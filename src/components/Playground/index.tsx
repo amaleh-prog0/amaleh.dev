@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { PlaygroundLayout } from "./PlaygroundLayout";
 
 type PlaygroundStep = 'idea' | 'requirements' | 'capabilities' | 'architecture' | 'decisions' | 'customization' | 'production' | 'output';
