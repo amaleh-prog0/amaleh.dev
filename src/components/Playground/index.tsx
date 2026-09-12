@@ -3,7 +3,6 @@
 import * as React from "react";
 import { createContext, useContext, useState } from "react";
 import { PlaygroundLayout } from "./PlaygroundLayout";
-import { Step } from "@/data/playground-map"; // I'll need to export Step from map.ts or define here
 
 type PlaygroundStep = 'idea' | 'requirements' | 'capabilities' | 'architecture' | 'decisions' | 'customization' | 'production' | 'output';
 
