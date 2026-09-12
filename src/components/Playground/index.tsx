@@ -104,12 +104,7 @@ function PlaygroundClient() {
   }, []);
 
   if (!mounted) {
-    return (
-      <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 h-[700px] w-full max-w-6xl mx-auto animate-pulse">
-        <div className="lg:col-span-4 bg-surface border border-border rounded-xl" />
-        <div className="lg:col-span-6 bg-surface border border-border rounded-xl" />
-      </div>
-    );
+    return null;
   }
 
   return <PlaygroundLayout />;
