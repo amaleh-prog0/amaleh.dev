@@ -32,35 +32,64 @@ export function ArchitectureDiagram({ capabilities, isProductionReady }: Props) 
       PRODUCTION_UPGRADES.edges.forEach(e => activeEdges.push(e));
     }
 
-    // Simple Layout Logic
+  React.useEffect(() => {
+    const activeComponents = new Set<string>(['frontend', 'api']);
+    const activeEdges: Edge[] = [{ from: 'frontend', to: 'api' }];
+
+    capabilities.forEach(cap => {
+      const mapping = CAPABILITY_MAP[cap as keyof typeof CAPABILITY_MAP];
+      if (mapping) {
+        mapping.components.forEach(c => activeComponents.add(c));
+        mapping.edges.forEach(e => activeEdges.push(e));
+      }
+    });
+
+    if (isProductionReady) {
+      PRODUCTION_UPGRADES.components.forEach(c => activeComponents.add(c));
+      PRODUCTION_UPGRADES.edges.forEach(e => activeEdges.push(e));
+    }
+
     const nodes: { id: string; x: number; y: number; comp: Component }[] = [];
     const componentList = Array.from(activeComponents);
 
-    //- Frontend: top
-    nodes.push({ id: 'frontend', x: 0, y: -150, comp: COMPONENT_LIBRARY['frontend'] });
-    //- API: center
+    // Structured Layout: Hierarchical
+    // Y-coords: Frontend (-200), API (0), Core Services (200), Infra (350)
+
+    // 1. Frontend
+    nodes.push({ id: 'frontend', x: 0, y: -200, comp: COMPONENT_LIBRARY['frontend'] });
+
+    // 2. API
     nodes.push({ id: 'api', x: 0, y: 0, comp: COMPONENT_LIBRARY['api'] });
 
-    // Other components in a circle/grid around API
-    let angle = 0;
-    const radius = 180;
-    componentList.forEach(id => {
-      if (id === 'frontend' || id === 'api') return;
-      const x = Math.cos(angle) * radius;
-      const y = Math.sin(angle) * radius;
-      nodes.push({ id, x, y, comp: COMPONENT_LIBRARY[id] });
-      angle += (2 * Math.PI) / (componentList.length - 2);
+    // 3. Production Entry Points (Top)
+    if (isProductionReady) {
+      nodes.push({ id: 'cdn', x: -120, y: -300, comp: COMPONENT_LIBRARY['cdn'] });
+      nodes.push({ id: 'waf', x: 120, y: -300, comp: COMPONENT_LIBRARY['waf'] });
+      nodes.push({ id: 'lb', x: 0, y: -100, comp: COMPONENT_LIBRARY['lb'] });
+    }
+
+    // 4. Core Services (Bottom Layer)
+    const coreComponents = componentList.filter(id =>
+      id !== 'frontend' && id !== 'api' &&
+      !['cdn', 'waf', 'lb', 'monitoring', 'read-replica'].includes(id)
+    );
+
+    coreComponents.forEach((id, idx) => {
+      const spacing = 180;
+      const total = coreComponents.length;
+      const x = (idx - (total - 1) / 2) * spacing;
+      nodes.push({ id, x, y: 200, comp: COMPONENT_LIBRARY[id] });
     });
 
-    // Special production positioning
+    // 5. Specialized Infra / Support
     if (isProductionReady) {
-      const lb = nodes.find(n => n.id === 'lb');
-      if (lb) { lb.x = 0; lb.y = -75; }
-      const cdn = nodes.find(n => n.id === 'cdn');
-      if (cdn) { cdn.x = -100; cdn.y = -225; }
-      const waf = nodes.find(n => n.id === 'waf');
-      if (waf) { waf.x = 100; waf.y = -225; }
+      nodes.push({ id: 'monitoring', x: 300, y: 0, comp: COMPONENT_LIBRARY['monitoring'] });
+      nodes.push({ id: 'read-replica', x: 0, y: 350, comp: COMPONENT_LIBRARY['read-replica'] });
     }
+
+    setNodes(nodes);
+    setEdges(activeEdges);
+  }, [capabilities, isProductionReady]);
 
     setNodes(nodes);
     setEdges(activeEdges);
