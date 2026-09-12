@@ -26,7 +26,7 @@ export default function PlaygroundPage() {
               <div className="lg:col-span-4 bg-surface border border-border rounded-xl" />
               <div className="lg:col-span-6 bg-surface border border-border rounded-xl" />
             </div>
-          </div>
+          </Container>
         </div>
       </PageWrapper>
     );
