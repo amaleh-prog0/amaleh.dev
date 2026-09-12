@@ -4,6 +4,28 @@ import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { PageWrapper } from "@/components/PageWrapper";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.valueProp,
+    openGraph: {
+      title: project.title,
+      description: project.valueProp,
+      type: "article",
+    },
+  };
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -76,37 +98,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </Container>
       </div>
     </PageWrapper>
-  );
-}
-
-          <div className="space-y-16">
-            <CaseStudySection title="Overview" content={caseStudy.overview} />
-            <CaseStudySection title="The Problem" content={caseStudy.problem} />
-            <CaseStudySection title="The Solution" content={caseStudy.solution} />
-            <CaseStudySection title="Architecture" content={caseStudy.architecture} />
-            <CaseStudySection title="Implementation" content={caseStudy.implementation} />
-            <CaseStudySection title="Technical Challenges" content={caseStudy.challenges} />
-            <CaseStudySection title="Results" content={caseStudy.results} />
-            <CaseStudySection title="Lessons Learned" content={caseStudy.lessons} />
-          </div>
-
-          <div className="mt-20 p-8 rounded-2xl border border-border bg-surface text-center relative overflow-hidden group">
-            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <h3 className="text-2xl font-bold mb-6 relative z-10">Explore the Source</h3>
-            <div className="flex justify-center gap-4 relative z-10">
-              <Button size="lg" href={project.github} target="_blank">
-                Visit GitHub Repository
-              </Button>
-              {project.demo && (
-                <Button variant="outline" size="lg" href={project.demo} target="_blank">
-                  Live Demo
-                </Button>
-              )}
-            </div>
-          </div>
-        </motion.div>
-      </Container>
-    </div>
   );
 }
 

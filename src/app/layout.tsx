@@ -29,12 +29,21 @@ export const metadata: Metadata = {
     title: "Amale Herbert | Full-stack & AI/ML Developer",
     description: "Engineering scalable, intelligent software systems across the full stack.",
     type: "website",
-    url: "https://amale.dev", // Placeholder
+    url: "https://amaleh-dev.vercel.app/",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Amale Herbert Portfolio Preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Amale Herbert | Full-stack & AI/ML Developer",
     description: "Engineering scalable, intelligent software systems across the full stack.",
+    images: ["/og-image.png"],
   },
 };
 
