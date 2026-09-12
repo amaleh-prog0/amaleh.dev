@@ -7,31 +7,6 @@ import { PageWrapper } from "@/components/PageWrapper";
 import { motion } from "framer-motion";
 
 export default function PlaygroundPage() {
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <PageWrapper>
-        <div className="relative pt-32 pb-20 overflow-hidden">
-          <Container>
-            <div className="text-center mb-16 animate-pulse">
-              <div className="h-12 w-64 bg-surface mx-auto mb-4 rounded-lg" />
-              <div className="h-6 w-96 bg-surface mx-auto rounded-lg" />
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 h-[700px] w-full max-w-6xl mx-auto">
-              <div className="lg:col-span-4 bg-surface border border-border rounded-xl" />
-              <div className="lg:col-span-6 bg-surface border border-border rounded-xl" />
-            </div>
-          </Container>
-        </div>
-      </PageWrapper>
-    );
-  }
-
   return (
     <PageWrapper>
       <div className="relative pt-32 pb-20 overflow-hidden">
