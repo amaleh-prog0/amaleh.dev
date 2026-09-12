@@ -32,23 +32,6 @@ export function ArchitectureDiagram({ capabilities, isProductionReady }: Props) 
       PRODUCTION_UPGRADES.edges.forEach(e => activeEdges.push(e));
     }
 
-  React.useEffect(() => {
-    const activeComponents = new Set<string>(['frontend', 'api']);
-    const activeEdges: Edge[] = [{ from: 'frontend', to: 'api' }];
-
-    capabilities.forEach(cap => {
-      const mapping = CAPABILITY_MAP[cap as keyof typeof CAPABILITY_MAP];
-      if (mapping) {
-        mapping.components.forEach(c => activeComponents.add(c));
-        mapping.edges.forEach(e => activeEdges.push(e));
-      }
-    });
-
-    if (isProductionReady) {
-      PRODUCTION_UPGRADES.components.forEach(c => activeComponents.add(c));
-      PRODUCTION_UPGRADES.edges.forEach(e => activeEdges.push(e));
-    }
-
     const nodes: { id: string; x: number; y: number; comp: Component }[] = [];
     const componentList = Array.from(activeComponents);
 
@@ -86,10 +69,6 @@ export function ArchitectureDiagram({ capabilities, isProductionReady }: Props) 
       nodes.push({ id: 'monitoring', x: 300, y: 0, comp: COMPONENT_LIBRARY['monitoring'] });
       nodes.push({ id: 'read-replica', x: 0, y: 350, comp: COMPONENT_LIBRARY['read-replica'] });
     }
-
-    setNodes(nodes);
-    setEdges(activeEdges);
-  }, [capabilities, isProductionReady]);
 
     setNodes(nodes);
     setEdges(activeEdges);
