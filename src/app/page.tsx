@@ -6,17 +6,20 @@ import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
 import { Reveal } from "@/components/Reveal";
+import { PageWrapper } from "@/components/PageWrapper";
 
 export default function Page() {
   return (
-    <main className="flex flex-col">
-      <Hero />
-      <Reveal direction="up"><About /></Reveal>
-      <Reveal direction="left"><WhatIBuild /></Reveal>
-      <Reveal direction="up"><Projects /></Reveal>
-      <Reveal direction="right"><Skills /></Reveal>
-      <Reveal direction="up"><Experience /></Reveal>
-      <Reveal direction="down"><Contact /></Reveal>
-    </main>
+    <PageWrapper>
+      <main className="flex flex-col">
+        <Hero />
+        <Reveal direction="up"><About /></Reveal>
+        <Reveal direction="left"><WhatIBuild /></Reveal>
+        <Reveal direction="up"><Projects /></Reveal>
+        <Reveal direction="right"><Skills /></Reveal>
+        <Reveal direction="up"><Experience /></Reveal>
+        <Reveal direction="down"><Contact /></Reveal>
+      </main>
+    </PageWrapper>
   );
 }
