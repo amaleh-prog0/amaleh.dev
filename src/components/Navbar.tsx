@@ -8,12 +8,12 @@ import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
+  { name: "About", href: "/#about" },
+  { name: "Projects", href: "/#projects" },
   { name: "Playground", href: "/playground" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 function NavLink({ link }: { link: typeof navLinks[0] }) {
