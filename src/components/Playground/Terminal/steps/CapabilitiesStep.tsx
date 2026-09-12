@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { usePlayground } from "../index";
+import { usePlayground } from "../../index";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { CAPABILITY_MAP } from "@/data/playground-map";
