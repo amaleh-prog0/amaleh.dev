@@ -11,17 +11,15 @@
   --text-muted: #6b7280;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark Theme - Deep Charcoal Electric */
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --surface: #141414;
-    --border: #262626;
-    --accent: #00ffff;
-    --accent-rgb: 0, 255, 255;
-    --text-muted: #a1a1aa;
-  }
+.dark {
+  /* Dark Theme - Deep Charcoal Electric */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --surface: #141414;
+  --border: #262626;
+  --accent: #00ffff;
+  --accent-rgb: 0, 255, 255;
+  --text-muted: #a1a1aa;
 }
 
 @theme inline {
