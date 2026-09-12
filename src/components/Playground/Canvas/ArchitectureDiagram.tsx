@@ -97,7 +97,7 @@ export function ArchitectureDiagram({ capabilities, isProductionReady }: Props) 
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative" style={{ transform: 'translate(-50%, -50%)', left: '50%', top: '50%' }}>
+      <div className="relative w-0 h-0">
         <svg className="absolute inset-0 w-full h-full overflow-visible pointer-events-none" style={{ zIndex: 0 }}>
           <defs>
             <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
